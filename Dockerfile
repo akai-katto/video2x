@@ -31,6 +31,7 @@ RUN wget https://github.com/nihui/waifu2x-ncnn-vulkan/releases/download/20200606
 RUN unzip waifu2x-ncnn-vulkan-20200606-linux.zip
 RUN mv waifu2x-ncnn-vulkan-20200606-linux /host/waifu2x-ncnn-vulkan
 RUN rm waifu2x-ncnn-vulkan-20200606-linux.zip
+RUN ls
 
 WORKDIR /host/waifu2x-ncnn-vulkan
 ENTRYPOINT ["/host/waifu2x-ncnn-vulkan"]
