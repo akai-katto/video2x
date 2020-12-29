@@ -11,7 +11,7 @@
 
 # using Ubuntu LTS 19.10
 # Ubuntu 20.x is incompatible with Nvidia libraries
-FROM ubuntu:20.04
+FROM ubuntu:19.10
 
 # file mainainter labels
 LABEL maintainer="Danielle Douglas <ddouglas87@gmail.com>"
