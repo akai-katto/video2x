@@ -61,21 +61,21 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 source $HOME/.cargo/env
 cargo install gifski
 
-# install waifu2x-caffe
-apt-fast install -y --no-install-recommends autoconf build-essential cmake gcc-8 libatlas-base-dev libboost-atomic-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-iostreams-dev libboost-python-dev libboost-system-dev libboost-thread-dev libcudnn7 libcudnn7-dev libgflags-dev libgoogle-glog-dev libhdf5-dev libleveldb-dev liblmdb-dev libopencv-dev libprotobuf-dev libsnappy-dev protobuf-compiler python-dev python-numpy texinfo yasm zlib1g-dev
-
-git clone --recurse-submodules --depth=1 --progress --recurse-submodules https://github.com/nagadomi/waifu2x-caffe-ubuntu.git $TEMP/waifu2x-caffe-ubuntu
-git clone --recurse-submodules --progress --depth=1 https://github.com/nagadomi/caffe.git $TEMP/waifu2x-caffe-ubuntu/caffe
-
-export CC=/usr/bin/gcc-8
-export CXX=/usr/bin/g++-8
-mkdir -v -p $TEMP/waifu2x-caffe-ubuntu/build
-cd $TEMP/waifu2x-caffe-ubuntu/build
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-make -j$(nproc) install
-
-mv -v /tmp/video2x/waifu2x-caffe-ubuntu/bin $INSTALLATION_PATH/video2x/src/dependencies/waifu2x-caffe
-mv -v /tmp/video2x/waifu2x-caffe-ubuntu/build/waifu2x-caffe $INSTALLATION_PATH/video2x/src/dependencies/waifu2x-caffe/waifu2x-caffe
+## install waifu2x-caffe
+#apt-fast install -y --no-install-recommends autoconf build-essential cmake gcc-8 libatlas-base-dev libboost-atomic-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-iostreams-dev libboost-python-dev libboost-system-dev libboost-thread-dev libcudnn7 libcudnn7-dev libgflags-dev libgoogle-glog-dev libhdf5-dev libleveldb-dev liblmdb-dev libopencv-dev libprotobuf-dev libsnappy-dev protobuf-compiler python-dev python-numpy texinfo yasm zlib1g-dev
+#
+#git clone --recurse-submodules --depth=1 --progress --recurse-submodules https://github.com/nagadomi/waifu2x-caffe-ubuntu.git $TEMP/waifu2x-caffe-ubuntu
+#git clone --recurse-submodules --progress --depth=1 https://github.com/nagadomi/caffe.git $TEMP/waifu2x-caffe-ubuntu/caffe
+#
+#export CC=/usr/bin/gcc-8
+#export CXX=/usr/bin/g++-8
+#mkdir -v -p $TEMP/waifu2x-caffe-ubuntu/build
+#cd $TEMP/waifu2x-caffe-ubuntu/build
+#cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+#make -j$(nproc) install
+#
+#mv -v /tmp/video2x/waifu2x-caffe-ubuntu/bin $INSTALLATION_PATH/video2x/src/dependencies/waifu2x-caffe
+#mv -v /tmp/video2x/waifu2x-caffe-ubuntu/build/waifu2x-caffe $INSTALLATION_PATH/video2x/src/dependencies/waifu2x-caffe/waifu2x-caffe
 
 # install waifu2x-converter-cpp
 apt-fast install -y --no-install-recommends build-essential cmake libopencv-dev beignet-opencl-icd mesa-opencl-icd nvidia-cuda-toolkit ocl-icd-opencl-dev opencl-headers
